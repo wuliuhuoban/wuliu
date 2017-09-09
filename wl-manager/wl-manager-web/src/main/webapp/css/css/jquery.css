@@ -1,0 +1,324 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.ztoProDialog {
+    border: 1px solid #C1C1C1;
+    position: absolute;
+    padding: 0px;
+    font-size: 12px;
+    left: 0px;
+    z-index: 999;
+    display:none;
+    /*box-shadow:0px 0px 8px #C1C1C1;*/
+    font-family:微软雅黑;
+    width:380px;
+    background: #fff;
+    /*box-shadow: 1px 1px 3px #C1C1C1;  */
+    outline: none;
+}
+.ztoProDialog li{ list-style: none;padding: 0px; margin: 0px}
+@media screen and (max-width:640px)
+{
+    .ztoProDialog {width: 300px;}
+}
+@media screen and (min-width:640px)
+{
+    .ztoProDialog {width: 380px;}
+}
+
+.divtitle{ background:#F5F5F5; height:35px; border-bottom:1px solid #DCDCDC}
+.wrap{ padding:10px;}
+.ztoProDialog a {
+    cursor: pointer;
+    font-family:微软雅黑
+}
+.ztoProDialog .dialogTitle {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+    color: #555;
+    height:35px;
+    line-height:35px;
+    text-indent:5px;
+    width: 150px;
+    text-align: left
+}
+.showClose {
+    display: block;
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    right: 11px;
+    top: 11px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.showPro{ width:100%; height:30px;outline: none; }
+.showPro {
+    border-bottom: 1px solid #CCC;
+}
+.showPro li {
+    float: left;
+    width: 67px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    border-bottom: 1px solid #CCC;
+    cursor: pointer;
+
+}
+.showPro .curr {
+    /*background: #086EB8;*/
+    color: #3599DD;
+    border-bottom:1px solid #fff;
+}
+.clearf {
+    zoom: 1;
+}
+.clearfix {
+    display: block;
+    clear: both
+}
+.clearf:after {
+    content: '\20';
+    display: block;
+    clear: both;
+}
+.ztoHotCityHis {
+    height: 70px;
+    display:none;
+}
+/*热门城市*/
+.ztoHotCity {
+    margin-top: 10px;
+    display: block
+}
+.ztoHotCity .title {
+    font-size: 14px;
+    border-bottom: 1px solid #F0F0F0;
+    padding-bottom: 5px;
+    color: #3599DD;
+
+}
+.ztoHotCityData .title{ background: #fff}
+.ztoHotCityDataUl {
+    margin: 5px;
+    outline: none;
+    overflow: hidden;
+}
+.ztoHotCityDataUl li {
+    float: left;
+    font-size: 14px;
+    float: left;
+    width: 70px;
+    height: 25px;
+}
+.ztoHotCityDataUl a {
+    display: block;
+    padding: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}
+.ztoHotCityDataUl li a:hover {
+    background: #50A0DC;
+    color: #fff
+}
+.ztoHotCityDataUl .curr {
+    background: #50A0DC;
+    color: #fff
+}
+.ztoHotCityDataUl .none{ background: #fff; color: #DFDFDF; }
+.ztoHotCityDataUl .none:hover{ background: #fff; color: #DFDFDF}
+.ztoHotCityDataUl span{display:none;float:right; position:absolute;left:50px; background:#B4E0FF; height:20px; color:#3989C1;top:0px; width:55px;padding:0px;z-index:9999;border:1px solid #318BCE;border-radius: 2px;text-indent: 0px; text-align: center}
+
+.ztoProvince {
+    display: none
+}
+.ztoProvinceData {
+    padding: 10px;
+    outline: none;
+    padding-top: 5px;
+
+}
+.ztoProvinceData dl {
+    clear: both;
+    line-height: 25px;
+    border:1px solid #fff;
+    /**/border-bottom:1px dashed #EDEDED;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.ztoProvinceData dt {
+    width: 50px;
+    height:50px;
+    font-size: 12px;
+    float: left;
+    color: #3599DD;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-indent:5px;
+}
+.ztoProvinceData dd a {
+    display: block;
+    width: 50px;
+    float: left;
+    height: 25px;
+    text-align: center;
+    cursor: pointer
+}
+.ztoProvinceData dd a:hover {
+    background: #50A0DC;
+    color: #fff
+}
+.ztoProvinceData .hot {
+    color: #FF6C00
+}
+.ztoProvinceData .curr {
+    background: #50A0DC;
+    color: #fff
+}
+.ztoProvinceData .none{ background: #fff; color: #DFDFDF; }
+.ztoProvinceData .none:hover{ background: #fff; color: #DFDFDF}
+.ztoProvinceData span{display:none;float:right; position:absolute;left:50px; background:#B4E0FF; height:20px; color:#3989C1;top:0px; width:55px;padding:0px;z-index:9999;border:1px solid #318BCE;border-radius: 2px;text-indent: 0px; text-align: center}
+
+.ztoProvinceDataPyin {
+    display: none
+}
+.ztoProvinceDataArea {
+    display: none;
+}
+.ztoProvinceDataArea {
+    padding: 10px;
+    outline: none;
+    padding-top: 5px;
+
+}
+.ztoProvinceDataArea dl {
+    clear: both;
+    line-height: 25px;
+    padding-top:2px;
+    padding-bottom:2px;
+    border:1px solid #fff;
+    border-bottom:1px dashed #CEDBE8;
+}
+.ztoProvinceDataArea dt {
+    width: 55px;
+    font-size: 13px;
+    float: left;
+    color: #3599DD;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-indent:5px;
+}
+.ztoProvinceDataArea dd a {
+    display: block;
+    width: 50px;
+    float: left;
+    height: 24px;
+    text-align: center;
+    cursor: pointer
+}
+.ztoProvinceDataArea dd a:hover {
+    background: #50A0DC;
+    color: #fff
+}
+.ztoProvinceDataArea .curr {
+    background: #50A0DC;
+    color: #fff
+}
+.ztoProvinceDataArea .none{ background: #fff; color: #DFDFDF; }
+.ztoProvinceDataArea .none:hover{ background: #fff; color: #DFDFDF}
+.ztoProvinceDataArea span{display:none;float:right; position:absolute;left:50px; background:#B4E0FF; height:20px; color:#3989C1;top:0px; width:55px;padding:0px;z-index:9999;border:1px solid #318BCE;border-radius: 2px;text-indent: 0px; text-align: center}
+
+.ztoProvinceNav {
+    height: 25px;
+    line-height: 25px;
+    padding: 5px;
+    padding-top: 10px;
+}
+.ztoProvinceNav li {
+    float: left;
+    padding-left: 5px;
+    padding-right: 0px;
+    margin-right: 0px;
+    cursor: pointer;
+    /*border-bottom: 1px solid #fff*/
+}
+.ztoProvinceNav .curr {
+    /*background: #EDEDED;*/
+    border-bottom: 1px solid #50A0DC;
+    /*border-radius: 4px*/
+    color:#50A0DC;
+}
+.ztoCity {
+    padding: 10px;
+    outline: none;
+    display: none
+}
+.ztoCityData {
+    outline: none;
+}
+.ztoCityData a {
+    display: block;
+    width: 80px;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    text-indent: 10px;
+    position:relative;
+}
+.ztoCityData a:hover {
+    background: #50A0DC;
+    color: #fff
+}
+.ztoCityData .hot {
+    color: #FF6C00
+}
+.ztoCityData .curr {
+    background: #50A0DC;
+    color: #fff
+}
+.ztoCityData .none{ background: #fff; color: #DFDFDF; }
+.ztoCityData .none:hover{ background: #fff; color: #DFDFDF}
+.ztoCityData span{display:none;float:right; position:absolute;left:50px; background:#B4E0FF; height:20px; color:#3989C1;top:0px; width:55px;padding:0px;z-index:9999;border:1px solid #318BCE;border-radius: 2px;text-indent: 0px; text-align: center}
+
+.ztoArea {
+    padding: 10px;
+    outline: none;
+    display: none;
+    padding-left:20px;
+    padding-right:20px;
+}
+.ztoAreaData {
+    outline: none;
+}
+.ztoAreaData a {
+    display: block;
+    width: 80px;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    text-indent: 10px;
+    position:relative;
+}
+.ztoAreaData a:hover {
+    background: #50A0DC;
+    color: #fff
+}
+.ztoAreaData .hot {
+    color: #FF6C00
+}
+.ztoAreaData .curr {
+    background: #50A0DC;
+    color: #fff
+}
+.ztoAreaData span{display:none;float:right; position:absolute;left:50px; background:#B4E0FF; height:20px; color:#3989C1;top:0px; width:55px;padding:0px;z-index:9999;border:1px solid #318BCE;border-radius: 2px;text-indent: 0px; text-align: center}
+.ztoAreaData .none{ background: #fff; color: #DFDFDF;display: block;width: 80px;height: 22px;}
+.ztoAreaData .none:hover{ background: #fff; color: #DFDFDF}
+
+/*图标*/

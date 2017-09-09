@@ -1,0 +1,25 @@
+#level1, #level2, #level3 { margin-left:5px;}
+.strength2 label.str2 { background-color: #6cbefe; }
+.strength2 label.str3 { background-color: #008bf6;}
+.Validform_right{color:#71b83d;	padding-left:20px;}
+.Validform_wrong{color:red;	padding-left:20px;	white-space:nowrap;}
+.Validform_loading{	padding-left:20px;}
+.Validform_error{	background-color:#ffe7e7;}
+#Validform_msg{color:#7d8289; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif; width:280px; -webkit-box-shadow:2px 2px 3px #aaa; -moz-box-shadow:2px 2px 3px #aaa; background:#fff; position:absolute; top:0px; right:50px; z-index:99999; display:none;filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999'); box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);}
+#Validform_msg .iframe{position:absolute; left:0px; top:-1px; z-index:-1;}
+#Validform_msg .Validform_title{line-height:25px; height:25px; text-align:left; font-weight:bold; padding:0 8px; color:#fff; position:relative; background-color:#999;
+    background: -moz-linear-gradient(top, #999, #666 100%); background: -webkit-gradient(linear, 0 0, 0 100%, from(#999), to(#666)); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#999999', endColorstr='#666666');}
+#Validform_msg a.Validform_close:link,#Validform_msg a.Validform_close:visited{line-height:22px; position:absolute; right:8px; top:0px; color:#fff; text-decoration:none;}
+#Validform_msg a.Validform_close:hover{color:#ccc;}
+#Validform_msg .Validform_info{padding:8px;border:1px solid #bbb; border-top:none; text-align:left;}
+.Validform_checktip{box-shadow: 1px 2px 9px 0 rgba(0, 0, 0, 0.2);margin-left:8px; border:1px solid #ccc; padding:8px 20px 8px 10px; 	color:#666; position:absolute;	display:none;line-height:20px; top:-35px; background-color:#fff;}
+.dec { bottom: -9px; color: #dcdcdc; float: left; font: 500 30px/18px "微软雅黑"; height: 18px;left: 30px; position: absolute;text-align: center; width: 18px; z-index: 1;}
+.dec s {  color: #fff9ea;}
+.dec .dec1 { bottom: 0; color: #f5d6ba; position: absolute;}
+.dec .dec2 { bottom: 2px; color: #fff9e9; position: absolute;}
+.tab1 tr th, .person tr th { position:relative; }
+
+
+#level1, #level2, #level3 { margin-left:5px; }
+.strength2 label.str2 {background-color: #6cbefe; }
+.strength2 label.str3 { background-color: #008bf6;}
