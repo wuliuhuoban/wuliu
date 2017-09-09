@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuliu.dao.TbEmpMapperCustom">
+    <sql id="Query_Singer">
+    e.name,e.address,e.phone,e.tel,e.qq,e.email,e.uid,e.jid,e.cid,j.name as jobName,u.username AS userName,c.city as cityName
+    </sql>
+    <select id="selectSingle" resultType="com.wuliu.pojo.vo.TbEmpCustom">
+        SELECT
+        <include refid="Query_Singer"/>
+        FROM tb_emp e
+        LEFT JOIN tb_user u ON u.id = e.uid
+        LEFT JOIN tb_city c on c.id = e.cid
+        LEFT JOIN tb_job j ON j.id = e.jid
+        where e.uid = #{id}
+    </select>
+</mapper>
