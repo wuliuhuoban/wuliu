@@ -1287,4 +1287,4 @@
             mozilla: /mozilla/.test(userAgent) && !/(compatible|webkit)/.test(userAgent)
         };
     }
-})(jQuery);
+})/*(jQuery)*/;

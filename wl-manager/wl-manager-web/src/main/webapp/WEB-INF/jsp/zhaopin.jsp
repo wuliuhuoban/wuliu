@@ -17,7 +17,7 @@
   <style>
     .banner {
       height: 100%;
-      background: url(wuliu/images/zhaopin/feiyue1.jpg)  no-repeat center top;
+      background: url(/wuliu/images/zhaopin/feiyue1.jpg)  no-repeat center top;
       position: absolute;
       top: 0;
       bottom: 0;

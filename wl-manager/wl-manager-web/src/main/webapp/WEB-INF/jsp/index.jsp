@@ -40,24 +40,24 @@
       <%--<img style="position: absolute; left: 50%; margin-left: 135px; top: 16px;" src="/Content/themes/base/images/zto_nyse.png" />--%>
       <div class="fl">
         <img src="images/base/tui.png" width="250" height="51"/>
-        <img src="images/base/head.png" width="198" height="26"/>
+        <img src="images/base/head.png" width="198" height="35"/>
 
       </div>
 
       <div class="fr" style="margin-top: -5px">
         <ul>
           <li>
-            <a title="飞毛腿速递官方微博" href="#">
+            <a title="飞毛腿速递官方微博" href="https://weibo.com/" target="_blank">
               <img src="images/base/head-icon-1.png" width="36" height="34"/>
             </a>
           </li>
-          <li><a title="飞毛腿官方支付宝服务窗" id="headzhifubao" href="#">
+          <li><a title="飞毛腿官方支付宝服务窗" id="headzhifubao" href="https://www.alipay.com/" target="_blank">
             <img src="images/base/head-icon-2.png" width="35" height="34"/>
           </a>
           </li>
-          <li><a title="飞毛腿微信公众号" href="#" id="headweixin">
+          <li><a title="飞毛腿微信公众号" href="https://wx.qq.com/" id="headweixin" target="_blank">
             <img src="images/base/head-icon-3.png" width="35" height="34"/></a></li>
-          <li><a title="飞毛腿QQ公众号" href="#" id="headqq">
+          <li><a title="飞毛腿QQ公众号" href="https://mp.qq.com/user/register/" id="headqq" target="_blank">
             <img src="images/base/qq.png" width="35" height="34"/></a></li>
         </ul>
       </div>
@@ -70,7 +70,7 @@
           <li class="nLi on" id="nav_index">
             <h3><a href="index">首页</a></h3>
           </li>
-          <li class="nLi " id="nva_productService" onmouseout="chu()" onmouseover="jin()">
+          <li class="nLi " id="nva_productService">
             <h3><a href="cpservice">产品服务</a></h3>
             <ul class="sub">
               <li><a href="#">时效件</a></li>
@@ -134,7 +134,7 @@
         <div class="bd">
           <div class="part1">
             <form action="#" method="GET" name="formbill" target="_blank" id="formbill">
-              <textarea id="txtbill" name="txtbill" rows="20" placeholder="请输入要查询的单号"></textarea>
+              <textarea id="waybill" name="waybill" onchange="checkwaybill()" rows="20" placeholder="请输入要查询的单号"></textarea>
               <div class="clean" id="cleanbill">清除</div>
               <div class="makesure" id="btn_onlineTracking" onclick="return checkBillData()">确定</div>
             </form>
@@ -151,23 +151,23 @@
   <div class="fastchannel">
     <ul class="clearfix">
       <li id="btn_contrabandQuery">
-        <a href="#" target="_blank">
+        <a href="service">
           <img src="images/base/weijin.png" width="45" height="45" />
         </a>
-        <h4><a href="#">违禁品查询</a></h4>
+        <h4><a href="service">违禁品查询</a></h4>
       </li>
       <li id="btn_productService">
-        <a href="#" target="_blank">
+        <a href="cpservice">
           <img src="images/base/products.png" width="45" height="45" />
         </a>
-        <h4><a href="#">产品服务</a></h4>
+        <h4><a href="cpservice">产品服务</a></h4>
       </li>
 
       <li id="btn_offerTime">
-        <a href="#" target="_blank">
+        <a href="shixiao">
           <img src="images/base/money.png" width="45" height="45" />
         </a>
-        <h4><a href="#">报价时效查询</a></h4>
+        <h4><a href="shixiao">报价时效查询</a></h4>
       </li>
 
       <li id="btn_customerService">
@@ -181,6 +181,18 @@
   </div>
 
   <script type="text/javascript">
+    var oncheckbill = false;
+    function checkwaybill(){
+      var waybill = $('#waybill').val();
+      if(waybill.length!=12){
+        oncheckbill = false;
+        alert("订单号有误");
+      }else{
+        oncheckbill = true;
+      }
+    }
+
+
   $(function () {
     var $div_li = $(".branchsearch .title .fr ul li");
     $div_li.click(function () {
@@ -210,11 +222,17 @@
     });
 //清空单号
     $("#cleanbill").click(function () {
-      $("#txtbill").val("");
+      $("#waybill").val("");
     });
   });
   function checkBillData() {
-    var arrChk = $("input[name^=checkbox]:checked");
+    var checkcode = true;
+    if(checkcode==oncheckbill){
+      return true;
+    }else{
+      return false;
+    }
+    /*var arrChk = $("input[name^=checkbox]:checked");
     if (arrChk.length <= 0) {
       if (checkBill("1")) {
         $("#formbill").prop("action", "#");
@@ -229,7 +247,7 @@
       } else {
         return false;
       }
-    }
+    }*/
   };
 </script>
 <div class="footer">飞毛腿快递&nbsp;版权所有&nbsp;浙ICP13044869号&#12288;总部地址：杭州牛田&#12288;咨询电话：66666666</div>

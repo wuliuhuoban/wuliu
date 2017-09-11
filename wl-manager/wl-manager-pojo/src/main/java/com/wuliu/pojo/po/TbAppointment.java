@@ -1,5 +1,7 @@
 package com.wuliu.pojo.po;
 
+import java.util.Date;
+
 public class TbAppointment {
     private Integer id;
 
@@ -12,6 +14,16 @@ public class TbAppointment {
     private String tel;
 
     private String flag;
+
+    private Date appoinTime;
+
+    public Date getAppoinTime() {
+        return appoinTime;
+    }
+
+    public void setAppoinTime(Date appoinTime) {
+        this.appoinTime = appoinTime;
+    }
 
     public Integer getId() {
         return id;

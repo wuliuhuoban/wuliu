@@ -16,6 +16,9 @@
     #div1{
       padding-left: 1200px;
     }
+    #div2{
+      padding-left: 100px;
+    }
     .footer{
       padding-left: 500px;
       position:fixed;
@@ -38,23 +41,23 @@
     <div class="headcont clearfix" style="position: relative">
       <div class="fl">
         <img src="images/base/tui.png" width="250" height="51"/>
-        <img src="images/base/head.png" width="198" height="26"/>
+        <img src="images/base/head.png" width="198" height="35"/>
       </div>
 
       <div class="fr" style="margin-top: -5px">
         <ul>
           <li>
-            <a title="飞毛腿速递官方微博" href="#">
+            <a title="飞毛腿速递官方微博" href="https://weibo.com/">
               <img src="images/base/head-icon-1.png" width="36" height="34"/>
             </a>
           </li>
-          <li><a title="飞毛腿官方支付宝服务窗" id="headzhifubao" href="#">
+          <li><a title="飞毛腿官方支付宝服务窗" id="headzhifubao" href="https://www.alipay.com/">
             <img src="images/base/head-icon-2.png" width="35" height="34"/>
           </a>
           </li>
-          <li><a title="飞毛腿微信公众号" href="#" id="headweixin">
+          <li><a title="飞毛腿微信公众号" href="https://wx.qq.com/" id="headweixin">
             <img src="images/base/head-icon-3.png" width="35" height="34"/></a></li>
-          <li><a title="飞毛腿QQ公众号" href="#" id="headqq">
+          <li><a title="飞毛腿QQ公众号" href="https://mp.qq.com/user/register/" id="headqq">
             <img src="images/base/qq.png" width="35" height="34"/></a></li>
         </ul>
       </div>
@@ -70,27 +73,9 @@
           </li>
           <li class="nLi " id="nva_productService">
             <h3><a href="#">产品服务</a></h3>
-            <%--<ul class="sub">
-             &lt;%&ndash; <li class="shixiao"><a href="#">时效件</a></li>
-              <div class="vcon" style="display:block ">
-               &lt;%&ndash; <ul class="vconlist clearfix">
-                  <li id="m1" onclick="go(1)" class="select"><a href="javascript:;;">8小时同城区域当天件</a></li>
-                  <li id="m2" onclick="go(2)" class="select"><a href="javascript:;;">12小时次晨达</a></li>
-                  <li id="m3" onclick="go(3)" class="select"><a href="javascript:;;">12小时次日达</a></li>
-                  <li id="m4" onclick="go(4)" class="select"><a href="javascript:;;">36小时隔日上午达</a></li>
-                </ul>&ndash;%&gt;
-              </div>&ndash;%&gt;
-            </ul>--%>
-
           </li>
           <li class="nLi " id="nva_customerService">
-            <h3><a href="#">客户服务</a></h3>
-            <ul class="sub">
-              <li><a href="#">快件查询</a></li>
-              <li><a href="#">服务网点查询</a></li>
-              <li><a href="#">报价时效查询</a></li>
-              <li><a href="#">禁寄品须知</a></li>
-            </ul>
+            <h3><a href="service">客户服务</a></h3>
           </li>
           <li class="nLi " id="nva_recruitment">
             <h3><a href="#">人才招聘</a></h3>
@@ -100,10 +85,6 @@
           </li>
           <li class="nLi " id="nav_news">
             <h3><a href="/News">新闻动态</a></h3>
-            <ul class="sub">
-              <li><a href="#">公司动态</a></li>
-              <li><a href="#">行业新闻</a></li>
-            </ul>
           </li>
         </ul>
       </div>
@@ -188,35 +169,35 @@
           <h2>8小时同城区域当天件</h2>
           <p>同城区域当天件是指：在同一个城市范围内，当天取件当天送达的快递服务</p>
           <h2>特点</h2>
-          <p>1. 通过国内先进快递业务系统、视频监控系统、GPS全球定位系统和新一代手持终端全程跟踪快件状态，确保客户的快件在中通网络高速运转。</p>
+          <p>1. 通过国内先进快递业务系统、视频监控系统、GPS全球定位系统和新一代手持终端全程跟踪快件状态，确保客户的快件在飞毛腿网络高速运转。</p>
           <p>2.时效保证<br/>
-            中通特别开辟8小时同城区域当天件绿色安全通道，让您的快件一路领先。</p>
+            飞毛腿特别开辟8小时同城区域当天件绿色安全通道，让您的快件一路领先。</p>
         </div>
         <div  class="fl w550" id="c2" style="float: left; float: left;display: none;">
           <h2>12小时次晨达</h2>
-          <p>是指在指定的开办范围内当天收寄的中通快件，通过中通合作航空公司运输在次日上午11：00前完成投递的中通特快专递业务。</p>
+          <p>是指在指定的开办范围内当天收寄的飞毛腿快件，通过飞毛腿合作航空公司运输在次日上午11：00前完成投递的飞毛腿特快专递业务。</p>
           <h2>特点</h2>
-          <p>1. 通过国内先进快递业务系统、视频监控系统、GPS全球定位系统和新一代手持终端全程跟踪快件状态，确保客户的快件在中通网络高速运转。</p>
+          <p>1. 通过国内先进快递业务系统、视频监控系统、GPS全球定位系统和新一代手持终端全程跟踪快件状态，确保客户的快件在飞毛腿网络高速运转。</p>
           <p>2.时效保证<br/>
-            中通特别开辟12小时同城区域当天件绿色安全通道，让您的快件一路领先。</p>
+            飞毛腿特别开辟12小时同城区域当天件绿色安全通道，让您的快件一路领先。</p>
         </div>
         <div  class="fl w550" id="c3" style="float: left; float: left;display: none;">
           <h2>12小时次日达</h2>
-          <p>今发明至，即今天寄件次日通过中通合作航空公司运输送达目的地客户手中，承诺时间：24小时内（最快16小时门到门送达）。</p>
+          <p>今发明至，即今天寄件次日通过飞毛腿合作航空公司运输送达目的地客户手中，承诺时间：24小时内（最快16小时门到门送达）。</p>
           <h2>特点</h2>
-          <p>1. 通过国内先进快递业务系统、视频监控系统、GPS全球定位系统和新一代手持终端全程跟踪快件状态，确保客户的快件在中通网络高速运转。 </p>
+          <p>1. 通过国内先进快递业务系统、视频监控系统、GPS全球定位系统和新一代手持终端全程跟踪快件状态，确保客户的快件在飞毛腿网络高速运转。 </p>
           <p>2.时效保证<br/>
-            中通特别开辟12小时同城区域当天件绿色安全通道，让您的快件一路领先。</p>
+            飞毛腿特别开辟12小时同城区域当天件绿色安全通道，让您的快件一路领先。</p>
           <h2>时效定义</h2>
           <p>以寄件时间（北京时间）为准，最晚在24小时内递送到目的地客户手中。 </p>
         </div>
         <div  class="fl w550" id="c4" style="float: left; float: left;display: none;">
           <h2>36小时次日达</h2>
-          <p>即今天寄件次日通过中通合作航空公司运输送达目的地客户手中，承诺时间：36小时内（最快当天取件第三天上午12点前送达）。</p>
+          <p>即今天寄件次日通过飞毛腿合作航空公司运输送达目的地客户手中，承诺时间：36小时内（最快当天取件第三天上午12点前送达）。</p>
           <h2>特点</h2>
           <p>1. 快件全程跟踪
-            通过国内先进快递业务系统、视频监控系统、GPS全球定位系统和新一代手持终端确保客户的快件在中通网络高速运转。</p>
-          <p>2. 中通特别开辟36小时隔日上午达绿色安全通道，让您的快件一路领先。 </p>
+            通过国内先进快递业务系统、视频监控系统、GPS全球定位系统和新一代手持终端确保客户的快件在飞毛腿网络高速运转。</p>
+          <p>2. 飞毛腿特别开辟36小时隔日上午达绿色安全通道，让您的快件一路领先。 </p>
           <h2>2.时效定义</h2>
           <p>以寄件时间（北京时间）为准，最晚在36小时内递送到目的地客户手中。 </p>
         </div>
