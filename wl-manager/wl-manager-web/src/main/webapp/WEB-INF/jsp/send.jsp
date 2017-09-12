@@ -10,11 +10,6 @@
 <head>
   <title>预约寄件</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <%-- <meta http-equiv="pragma" content="no-cache" />
-   <meta http-equiv="cache-control" content="no-cache" />
-   <meta http-equiv="expires" content="0" />
-   <meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
-   <meta http-equiv="description" content="This is my page" />--%>
   <link href="css/css/css.css" type="text/css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="css/css/ligerui-dialog.css"/>
   <link href="css/css/ligerui-icons.css" rel="stylesheet" type="text/css" />
@@ -121,6 +116,12 @@
         return false;
       }
     }
+    /*function getMessage(){
+      var msg = $("#msg").val();
+      if(msg!=null&&msg!=""){
+        alert (msg);
+      }
+    }*/
   </script>
 
   <style type="text/css">
@@ -146,7 +147,7 @@
     <img src="images/send/itui.png" class="zto" />
     <div class="index_menu">
       <a href="index">首页</a>
-      <a href="send">在线寄件</a>
+      <a href="send">在线预约</a>
     </div>
   </div>
 </nav>
@@ -159,6 +160,7 @@
   <form action="saveAppoin" class="bl-form bl-formhor orderform" id="orderForm" method="post">
     <div class="main">
       <div><span style="font-size: xx-large">请填写预约信息</span></div>
+
       <ul class="tabwrap">
         <li>
           <div class="tit"> <div>寄件人姓名：</div> <div class="hintRed">*</div></div>
@@ -186,6 +188,8 @@
 
     </div>
     <div class="Protocol">
+
+     <%-- <input id="msg" type="hidden" onchange="getMessage();" value="${msg}">--%>
       <input type="submit" onclick="return sendsubmit();" value="确定" class="yes" id="btnSubmit" />
     </div>
   </form>

@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -21,11 +20,15 @@ import java.io.IOException;
 public class AppoinAction {
     @Autowired
     private AppoinService servcie;
+
+    //新增预约客户
     @RequestMapping("/saveAppoin")
-    public String test1(TbAppointment tbAppointment,HttpServletResponse response) throws IOException {
-       if(tbAppointment.getName()!=null&& tbAppointment.getPhone()!=null)
-        servcie.save(tbAppointment);
-        response.getWriter().print("恭喜您预约成功");
+    public String test1(TbAppointment tbAppointment) throws IOException {
+        if (tbAppointment.getName() != null && tbAppointment.getPhone() != null) {
+            if (servcie.save(tbAppointment)) {
+                return "appoinsuccess";
+            }
+        }
         return "send";
     }
 }

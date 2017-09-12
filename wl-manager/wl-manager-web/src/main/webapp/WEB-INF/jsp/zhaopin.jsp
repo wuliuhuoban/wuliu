@@ -12,9 +12,14 @@
   <title>飞毛腿招聘官网</title>
   <link href="css/css/default.css" rel="stylesheet" />
   <link href="css/css/index.css" rel="stylesheet" />
-
-
   <style>
+    .footer{
+      height: 50px;
+      line-height: 50px;
+      background: #3f4a5a;
+      text-align: center;
+      color: #fff;font-size: 14px;
+    }
     .banner {
       height: 100%;
       background: url(/wuliu/images/zhaopin/feiyue1.jpg)  no-repeat center top;
@@ -162,20 +167,14 @@
   </script>
 </head>
 <body>
-<%--<div class="header_fly">
-  <img class="logo" src="images/base/tui.png" />
-  <div class="nav clearboth">
 
-  </div>
-
-</div>--%>
 <div class="parttop" style="width: 1349px;height: 636px;">
   <div class="header">
     <img class="logo" src="images/base/tui.png" />
     <div class="nav clearboth">
       <a href="index" class="item cur"><h2>首页</h2></a>
     </div>
-    </div>
+  </div>
 
   <div class="banner">
     <div class="search_box clearboth">
@@ -196,39 +195,45 @@
     </div>
     <div class="postnew_list">
       <div class="postnew_room clearboth">
-        <a href="#" class="postnew_item">
-          <img src="images/zhaopin/postnew_1.jpg" />
-          <div class="shade">
-            <span class="black"></span>
-          </div>
-          <div class="border"></div>
-          <div class="item_text">
-            <strong>java开发工程师</strong>
-            <span>招聘人数：<i>3</i></span>
-            <em>杭州</em>
-            <i class="line"></i>
-            <i class="detail">查看</i>
-          </div>
-        </a>
-        <a href="social/detail.html" class="postnew_item">
-          <img src="images/zhaopin/postnew_1.jpg" />
-          <div class="shade">
-            <span class="black"></span>
-          </div>
-          <div class="border"></div>
-          <div class="item_text">
-            <strong>运维工程师数据库方向</strong>
-            <span>招聘人数：<i>3</i></span>
-            <em>上海</em>
-            <i class="line"></i>
-            <i class="detail">查看</i>
-          </div>
-        </a>
-      </div>
+        <div id="books">
+          <table width="100%">
+            <tr>
+              <td align="center">
+                <table>
+                  <tr><td align="center"><a href="#"><img src="images/zhaopin/postnew_1.jpg"/></a></td></tr>
+                  <tr><td align="center">地区：杭州</td></tr>
+                  <tr><td align="center"><a href="#">招聘java程序员3人</a></td></tr>
+                </table>
+              </td>
+              <td align="center">
+                <table>
+                  <tr><td align="center"><a href="#"><img src="images/zhaopin/postnew_1.jpg"/></a></td></tr>
+                  <tr><td align="center">地区：杭州</td></tr>
+                  <tr><td align="center"><a href="#">招聘客服3人</a></td></tr>
+                </table>
+              </td>
+              <td align="center">
+                <table>
+                  <tr><td align="center"><a href="#"><img src="images/zhaopin/postnew_1.jpg"/></a></td></tr>
+                  <tr><td align="center">地区：杭州</td></tr>
+                  <tr><td align="center"><a href="#">招聘运维3人</a></td></tr>
+                </table>
+              </td>
+              <td align="center">
+                <table>
+                  <tr><td align="center"><a href="#"><img src="images/zhaopin/postnew_1.jpg"/></a></td></tr>
+                  <tr><td align="center">地区：杭州</td></tr>
+                  <tr><td align="center"><a href="#">招聘产品经理3人</a></td></tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
+  </div>
 </div>
-<div class="module module_video">
+<%--<div class="module module_video">
   <div class="module_box">
     <div class="module_title special">
       <span class="line top"></span>
@@ -250,22 +255,12 @@
       <span class="line left"></span>
       <span class="line right"></span>
       <div class="title_text">
-        <img src="images/index/title_3.jpg" />
+        <img src="images/zhaopin/title_3.jpg" />
         <em>联系我们</em>
       </div>
     </div>
-    <div class="contact_list clearboth">
-      <div class="contact_item item_1">
-        <p>021-69787567<br />021-69787568</p>
-      </div>
-      <div class="contact_item item_2">
-        <a href="mailto:ztohr@zto.cn">ztohr@zto.cn</a>
-      </div>
-
-    </div>
-    <img class="contact_img" src="images/index/contact_img.png" />
   </div>
-</div>
+</div>--%>
 <div class="footer">
   <p>飞毛腿快递&nbsp;版权所有&nbsp;浙ICP13044869号&#12288;总部地址：杭州牛田&#12288;咨询电话：66666666</p>
 </div>

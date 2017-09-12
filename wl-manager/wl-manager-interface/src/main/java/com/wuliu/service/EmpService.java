@@ -3,6 +3,7 @@ package com.wuliu.service;
 import com.wuliu.common.dto.Order;
 import com.wuliu.common.dto.Page;
 import com.wuliu.common.dto.Result;
+import com.wuliu.pojo.po.TbEmp;
 import com.wuliu.pojo.po.TbUser;
 import com.wuliu.pojo.vo.EmpQuery;
 import com.wuliu.pojo.vo.TbEmpCustom;
@@ -19,4 +20,8 @@ public interface EmpService {
     int updateEmpsByIds(List<Integer> ids);
 
     TbEmpCustom selectSingle(TbUser tbUser);
+
+    TbEmpCustom selectById(int id);
+
+    int updateEmp(TbEmp tbEmp);
 }

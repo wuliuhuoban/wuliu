@@ -15,15 +15,7 @@ public class TbAppointment {
 
     private String flag;
 
-    private Date appoinTime;
-
-    public Date getAppoinTime() {
-        return appoinTime;
-    }
-
-    public void setAppoinTime(Date appoinTime) {
-        this.appoinTime = appoinTime;
-    }
+    private Date appointime;
 
     public Integer getId() {
         return id;
@@ -71,5 +63,13 @@ public class TbAppointment {
 
     public void setFlag(String flag) {
         this.flag = flag == null ? null : flag.trim();
+    }
+
+    public Date getAppointime() {
+        return appointime;
+    }
+
+    public void setAppointime(Date appointime) {
+        this.appointime = appointime;
     }
 }

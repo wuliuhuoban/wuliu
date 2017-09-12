@@ -1,6 +1,7 @@
 package com.wuliu.pojo.po;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TbAppointmentExample {
@@ -511,6 +512,66 @@ public class TbAppointmentExample {
 
         public Criteria andFlagNotBetween(String value1, String value2) {
             addCriterion("flag not between", value1, value2, "flag");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeIsNull() {
+            addCriterion("appoinTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeIsNotNull() {
+            addCriterion("appoinTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeEqualTo(Date value) {
+            addCriterion("appoinTime =", value, "appointime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeNotEqualTo(Date value) {
+            addCriterion("appoinTime <>", value, "appointime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeGreaterThan(Date value) {
+            addCriterion("appoinTime >", value, "appointime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("appoinTime >=", value, "appointime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeLessThan(Date value) {
+            addCriterion("appoinTime <", value, "appointime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeLessThanOrEqualTo(Date value) {
+            addCriterion("appoinTime <=", value, "appointime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeIn(List<Date> values) {
+            addCriterion("appoinTime in", values, "appointime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeNotIn(List<Date> values) {
+            addCriterion("appoinTime not in", values, "appointime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeBetween(Date value1, Date value2) {
+            addCriterion("appoinTime between", value1, value2, "appointime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointimeNotBetween(Date value1, Date value2) {
+            addCriterion("appoinTime not between", value1, value2, "appointime");
             return (Criteria) this;
         }
     }

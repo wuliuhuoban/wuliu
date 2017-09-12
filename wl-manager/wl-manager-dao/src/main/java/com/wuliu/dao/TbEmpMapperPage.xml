@@ -3,7 +3,7 @@
 <mapper namespace="com.wuliu.dao.TbEmpMapperPage" >
     <sql id="Base_Column_List" >
         i.id,i.name,i.address,c.name as cityName,j.name as jobName,i.phone,
-        i.tel,i.qq,i.email,
+        i.tel,i.qq,i.email,u.username AS userName,
         CASE i.flag
         WHEN '1' THEN "正常"
         WHEN '2' THEN "删除"
@@ -36,6 +36,7 @@
         from tb_emp i
         LEFT JOIN tb_city c ON i.cid=c.id
         LEFT JOIN tb_job j ON i.jid=j.id
+        LEFT JOIN tb_user u ON u.id=i.uid
         <include refid="Where_Clause"></include>
         <choose>
             <when test="order!=null and order.sort!=null and order.order!=null">

@@ -19,14 +19,9 @@ public class UserAction {
     @Autowired
     private UserService service;
     @RequestMapping("login")
-    public String login(HttpServletRequest request){
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        TbUser tbUser = new TbUser();
-        tbUser.setUsername(username);
-        tbUser.setPassword(password);
+    public String login(TbUser tbUser,HttpServletRequest request){
         TbUser user = service.login(tbUser);
-        if (tbUser!=null){
+        if (user!=null){
             request.getSession().setAttribute("user",user);
             System.out.println(user.getId());
             request.setAttribute("msg",null);

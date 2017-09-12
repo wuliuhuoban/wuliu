@@ -9,92 +9,9 @@
 <html>
 <head>
   <title>飞毛腿报价时效查询</title>
-  <link href="css/css/base.css?v_20170727" rel="stylesheet" type="text/css" />
-  <link href="css/css/index.css?v_20170727" rel="stylesheet" type="text/css" />
-  <script src="js/myjs/jquery-1.8.2.min.js"></script>
-  <style type="text/css">
-    #div1{
-      padding-left: 1200px;
-    }
-    .footer{
-      padding-left: 500px;
-      position:fixed;
-      bottom:0;
-    }
-  </style>
 </head>
 <body>
-<div class="headTips yixin"></div>
-<div id="headwarp">
-  <div id="headState" class="upper">
-    <div id="div1">
-      <a href="loginForm"><h5>登录</h5></a>
-    </div>
-  </div>
-  <script>
-    $("#headState").load("/Account/Index")
-  </script>
-
-  <div class="head">
-    <div class="headcont clearfix" style="position: relative">
-      <%--<img style="position: absolute; left: 50%; margin-left: 135px; top: 16px;" src="/Content/themes/base/images/zto_nyse.png" />--%>
-      <div class="fl">
-        <img src="images/base/tui.png" width="250" height="51"/>
-        <img src="images/base/head.png" width="198" height="35"/>
-      </div>
-      <div class="fr" style="margin-top: -5px">
-        <ul>
-          <li>
-            <a title="飞毛腿速递官方微博" href="https://weibo.com/" target="_blank">
-              <img src="images/base/head-icon-1.png" width="36" height="34"/>
-            </a>
-          </li>
-          <li><a title="飞毛腿官方支付宝服务窗" id="headzhifubao" href="https://www.alipay.com/" target="_blank">
-            <img src="images/base/head-icon-2.png" width="35" height="34"/>
-          </a>
-          </li>
-          <li><a title="飞毛腿微信公众号" href="https://wx.qq.com/" id="headweixin" target="_blank">
-            <img src="images/base/head-icon-3.png" width="35" height="34"/></a></li>
-          <li><a title="飞毛腿QQ公众号" href="https://mp.qq.com/user/register/" id="headqq" target="_blank">
-            <img src="images/base/qq.png" width="35" height="34"/></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="menu">
-    <div class="menucont">
-      <div class="fl">
-        <ul class="clearfix nav" id="nav">
-          <li class="nLi on" id="nav_index">
-            <h3><a href="index">首页</a></h3>
-          </li>
-          <li class="nLi " id="nva_productService">
-            <h3><a href="cpservice">产品服务</a></h3>
-          </li>
-          <li class="nLi " id="nva_customerService">
-            <h3><a href="service">客户服务</a></h3>
-          </li>
-          <li class="nLi " id="nva_recruitment">
-            <h3><a href="zhaopin">人才招聘</a></h3>
-          </li>
-          <li class="nLi " id="nav_about">
-            <h3><a href="#">企业介绍</a></h3>
-          </li>
-          <li class="nLi " id="nav_news">
-            <h3><a href="#">新闻动态</a></h3>
-          </li>
-        </ul>
-      </div>
-      <div class="kefuicon">
-        <a href="#">
-          <img src="images/base/kefuicon1.png" width="240" height="61" />
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-<script type="text/javascript" src="js/myjs/layer.min.js"></script>
-
+<%@include file="head.jsp"%>
 <%-- 下半部--%>
 <div id="content">
   <div class="contentwarp clearfix">
@@ -108,9 +25,9 @@
         </div>
         <div class="contentlist">
           <ul>
-            <li class="on"><a href="#">快件查询</a></li>
-            <li class=""><a href="#">报价时效查询</a></li>
-            <li class=""><a href="#">禁寄品须知</a></li>
+            <li class="on"><a href="danhaoQuery">快件查询</a></li>
+            <li class=""><a href="shixiao">报价时效查询</a></li>
+            <li class=""><a href="weijinpin">禁寄品须知</a></li>
           </ul>
         </div>
       </div>
@@ -126,25 +43,25 @@
 
             <li class="firstChild">
               <div>
-                <a href="#" target="_blank">
+                <a href="weijinpin">
                   <img src="images/base/weijin.png" width="39" height="38" /></a>
               </div>
-              <h5><a href="#" target="_blank">违禁品</a></h5>
+              <h5><a href="weijinpin">违禁品</a></h5>
             </li>
 
             <li>
               <div>
-                <a href="#" target="_blank">
+                <a href="shixiao" target="_blank">
                   <img src="images/base/money.png" width="39" height="38" /></a>
               </div>
-              <h5><a href="#" target="_blank">报价时效</a></h5>
+              <h5><a href="shixiao" target="_blank">报价时效</a></h5>
             </li>
             <li class="firstChild">
               <div>
-                <a href="#" target="_blank">
+                <a href="serviceGuide">
                   <img src="images/service/pdicon-7.png" width="39" height="38"></a>
               </div>
-              <h5><a href="#">服务指南</a></h5>
+              <h5><a href="serviceGuide">服务指南</a></h5>
             </li>
           </ul>
         </div>
@@ -175,7 +92,7 @@
           <h3>注释</h3>
           <ul>
             <li>1.此报价重量是按1进位处理。</li>
-            <li>2.此报价为指导价仅供参考，详情请咨询中通通当地营业网点 [<a href="/GuestService/SiteQuery">网点分布</a>]</li>
+            <li>2.此报价为指导价仅供参考，详情请咨询飞毛腿通当地营业网点 [<a href="/GuestService/SiteQuery">网点分布</a>]</li>
             <li>3.体积重量：如果您不清楚重量，请输入长宽高计算。
               ( 注：根据国际航空运输协会（IATA）规定，轻抛货的计费重量按货物长×高×宽（CM）÷6000计算（不规则
               货物，包括圆锥、圆柱状物体按长方体计算，为长、宽、高三个方向的最大尺寸相乘）。非航空件轻抛货计费

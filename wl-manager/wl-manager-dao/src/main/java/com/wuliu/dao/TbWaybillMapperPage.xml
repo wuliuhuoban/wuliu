@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuliu.dao.TbWaybillMapperPage" >
+    <sql id="Base_Column_List" >
+        i.id,i.waybill,i.status,i.fname,i.faddress,i.fphone
+        ,i.tname,i.taddress,i.tphone,
+        i.type,i.weight,i.remark,i.flag
+    </sql>
+
+    <sql id="Where_Clause">
+        <where>
+            i.flag!= '2'
+            <if test="tbWaybill != null and tbWaybill.fname != null and tbWaybill.fname != ''">
+                and i.fname like '%${tbWaybill.fname}%'
+            </if>
+            <if test="tbWaybill != null and tbWaybill.waybill != null and tbWaybill.waybill != 0">
+                and i.waybill = #{tbWaybill.waybill}
+            </if>
+        </where>
+    </sql>
+    <!--这里的_long是指明返回值类型是基本数据类型的long,不想要null,而是想要0-->
+    <select id="selectTotal" resultType="_long">
+        select count(1) FROM tb_waybill i
+        <include refid="Where_Clause"/>
+    </select>
+
+    <select id="selectWaybillByPage" resultType="com.wuliu.pojo.po.TbWaybill" >
+        select
+        <include refid="Base_Column_List"/>
+        from tb_waybill i
+        <include refid="Where_Clause"></include>
+        <choose>
+            <when test="order!=null and order.sort!=null and order.order!=null">
+                /*ORDER BY CONVERT(i.${order.sort} using gbk) ${order.order}*/
+                <foreach collection="order.orderParams" item="op" open="order by" separator=",">
+                    ${op}
+                </foreach>
+            </when>
+            <otherwise></otherwise>
+        </choose>
+        limit #{page.begin},#{page.rows}
+    </select>
+
+</mapper>

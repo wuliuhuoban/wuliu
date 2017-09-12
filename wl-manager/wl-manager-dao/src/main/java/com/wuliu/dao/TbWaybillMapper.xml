@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuliu.dao.TbWaybillMapper" >
+  <resultMap id="BaseResultMap" type="com.wuliu.pojo.po.TbWaybill" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="waybill" property="waybill" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="fname" property="fname" jdbcType="VARCHAR" />
+    <result column="faddress" property="faddress" jdbcType="VARCHAR" />
+    <result column="fphone" property="fphone" jdbcType="VARCHAR" />
+    <result column="tname" property="tname" jdbcType="VARCHAR" />
+    <result column="taddress" property="taddress" jdbcType="VARCHAR" />
+    <result column="tphone" property="tphone" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="weight" property="weight" jdbcType="DOUBLE" />
+    <result column="flag" property="flag" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.wuliu.pojo.po.TbWaybill" extends="BaseResultMap" >
+    <result column="remark" property="remark" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, waybill, status, fname, faddress, fphone, tname, taddress, tphone, type, weight, 
+    flag
+  </sql>
+  <sql id="Blob_Column_List" >
+    remark
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.wuliu.pojo.po.TbWaybillExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_waybill
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wuliu.pojo.po.TbWaybillExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_waybill
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_waybill
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_waybill
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuliu.pojo.po.TbWaybillExample" >
+    delete from tb_waybill
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuliu.pojo.po.TbWaybill" >
+    insert into tb_waybill (id, waybill, status, 
+      fname, faddress, fphone, 
+      tname, taddress, tphone, 
+      type, weight, flag, 
+      remark)
+    values (#{id,jdbcType=INTEGER}, #{waybill,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{fname,jdbcType=VARCHAR}, #{faddress,jdbcType=VARCHAR}, #{fphone,jdbcType=VARCHAR}, 
+      #{tname,jdbcType=VARCHAR}, #{taddress,jdbcType=VARCHAR}, #{tphone,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{weight,jdbcType=DOUBLE}, #{flag,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuliu.pojo.po.TbWaybill" >
+    insert into tb_waybill
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="waybill != null" >
+        waybill,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="fname != null" >
+        fname,
+      </if>
+      <if test="faddress != null" >
+        faddress,
+      </if>
+      <if test="fphone != null" >
+        fphone,
+      </if>
+      <if test="tname != null" >
+        tname,
+      </if>
+      <if test="taddress != null" >
+        taddress,
+      </if>
+      <if test="tphone != null" >
+        tphone,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="flag != null" >
+        flag,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="waybill != null" >
+        #{waybill,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="fname != null" >
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="faddress != null" >
+        #{faddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fphone != null" >
+        #{fphone,jdbcType=VARCHAR},
+      </if>
+      <if test="tname != null" >
+        #{tname,jdbcType=VARCHAR},
+      </if>
+      <if test="taddress != null" >
+        #{taddress,jdbcType=VARCHAR},
+      </if>
+      <if test="tphone != null" >
+        #{tphone,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=DOUBLE},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuliu.pojo.po.TbWaybillExample" resultType="java.lang.Integer" >
+    select count(*) from tb_waybill
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_waybill
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.waybill != null" >
+        waybill = #{record.waybill,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.fname != null" >
+        fname = #{record.fname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.faddress != null" >
+        faddress = #{record.faddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fphone != null" >
+        fphone = #{record.fphone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tname != null" >
+        tname = #{record.tname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taddress != null" >
+        taddress = #{record.taddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tphone != null" >
+        tphone = #{record.tphone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weight != null" >
+        weight = #{record.weight,jdbcType=DOUBLE},
+      </if>
+      <if test="record.flag != null" >
+        flag = #{record.flag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update tb_waybill
+    set id = #{record.id,jdbcType=INTEGER},
+      waybill = #{record.waybill,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      fname = #{record.fname,jdbcType=VARCHAR},
+      faddress = #{record.faddress,jdbcType=VARCHAR},
+      fphone = #{record.fphone,jdbcType=VARCHAR},
+      tname = #{record.tname,jdbcType=VARCHAR},
+      taddress = #{record.taddress,jdbcType=VARCHAR},
+      tphone = #{record.tphone,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      weight = #{record.weight,jdbcType=DOUBLE},
+      flag = #{record.flag,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_waybill
+    set id = #{record.id,jdbcType=INTEGER},
+      waybill = #{record.waybill,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      fname = #{record.fname,jdbcType=VARCHAR},
+      faddress = #{record.faddress,jdbcType=VARCHAR},
+      fphone = #{record.fphone,jdbcType=VARCHAR},
+      tname = #{record.tname,jdbcType=VARCHAR},
+      taddress = #{record.taddress,jdbcType=VARCHAR},
+      tphone = #{record.tphone,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      weight = #{record.weight,jdbcType=DOUBLE},
+      flag = #{record.flag,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuliu.pojo.po.TbWaybill" >
+    update tb_waybill
+    <set >
+      <if test="waybill != null" >
+        waybill = #{waybill,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="fname != null" >
+        fname = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="faddress != null" >
+        faddress = #{faddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fphone != null" >
+        fphone = #{fphone,jdbcType=VARCHAR},
+      </if>
+      <if test="tname != null" >
+        tname = #{tname,jdbcType=VARCHAR},
+      </if>
+      <if test="taddress != null" >
+        taddress = #{taddress,jdbcType=VARCHAR},
+      </if>
+      <if test="tphone != null" >
+        tphone = #{tphone,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=DOUBLE},
+      </if>
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuliu.pojo.po.TbWaybill" >
+    update tb_waybill
+    set waybill = #{waybill,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      fname = #{fname,jdbcType=VARCHAR},
+      faddress = #{faddress,jdbcType=VARCHAR},
+      fphone = #{fphone,jdbcType=VARCHAR},
+      tname = #{tname,jdbcType=VARCHAR},
+      taddress = #{taddress,jdbcType=VARCHAR},
+      tphone = #{tphone,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      weight = #{weight,jdbcType=DOUBLE},
+      flag = #{flag,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuliu.pojo.po.TbWaybill" >
+    update tb_waybill
+    set waybill = #{waybill,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      fname = #{fname,jdbcType=VARCHAR},
+      faddress = #{faddress,jdbcType=VARCHAR},
+      fphone = #{fphone,jdbcType=VARCHAR},
+      tname = #{tname,jdbcType=VARCHAR},
+      taddress = #{taddress,jdbcType=VARCHAR},
+      tphone = #{tphone,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      weight = #{weight,jdbcType=DOUBLE},
+      flag = #{flag,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

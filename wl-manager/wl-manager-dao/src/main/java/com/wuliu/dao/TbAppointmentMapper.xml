@@ -8,6 +8,7 @@
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="tel" property="tel" jdbcType="VARCHAR" />
     <result column="flag" property="flag" jdbcType="VARCHAR" />
+    <result column="appoinTime" property="appointime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, phone, address, tel, flag
+    id, name, phone, address, tel, flag, appoinTime
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wuliu.pojo.po.TbAppointmentExample" >
     select
@@ -102,9 +103,11 @@
   </delete>
   <insert id="insert" parameterType="com.wuliu.pojo.po.TbAppointment" >
     insert into tb_appointment (id, name, phone, 
-      address, tel, flag)
+      address, tel, flag, 
+      appoinTime)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
-      #{address,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR})
+      #{address,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR}, 
+      #{appointime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.wuliu.pojo.po.TbAppointment" >
     insert into tb_appointment
@@ -127,6 +130,9 @@
       <if test="flag != null" >
         flag,
       </if>
+      <if test="appointime != null" >
+        appoinTime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -146,6 +152,9 @@
       </if>
       <if test="flag != null" >
         #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="appointime != null" >
+        #{appointime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -176,6 +185,9 @@
       <if test="record.flag != null" >
         flag = #{record.flag,jdbcType=VARCHAR},
       </if>
+      <if test="record.appointime != null" >
+        appoinTime = #{record.appointime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -188,7 +200,8 @@
       phone = #{record.phone,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
       tel = #{record.tel,jdbcType=VARCHAR},
-      flag = #{record.flag,jdbcType=VARCHAR}
+      flag = #{record.flag,jdbcType=VARCHAR},
+      appoinTime = #{record.appointime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -211,6 +224,9 @@
       <if test="flag != null" >
         flag = #{flag,jdbcType=VARCHAR},
       </if>
+      <if test="appointime != null" >
+        appoinTime = #{appointime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -220,7 +236,8 @@
       phone = #{phone,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       tel = #{tel,jdbcType=VARCHAR},
-      flag = #{flag,jdbcType=VARCHAR}
+      flag = #{flag,jdbcType=VARCHAR},
+      appoinTime = #{appointime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

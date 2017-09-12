@@ -20,7 +20,7 @@
     <script type="text/javascript">
     </script>
     <style type="text/css">
-        .footer{
+       .footer{
             padding-left: 500px;
             position:fixed;
             bottom:0;

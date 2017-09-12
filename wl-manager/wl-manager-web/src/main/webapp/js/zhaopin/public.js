@@ -40,10 +40,10 @@ var public={
             var num=data.data.length;
             for(var i=0;i<num;i++)
             {
-                $(".postnew_item:eq("+i+")").attr("href","social/detail.html?id="+data.data[i].id+"");
+               /* $(".postnew_item:eq("+i+")").attr("href","social/detail.html?id="+data.data[i].id+"");
                 $(".postnew_item:eq("+i+") .item_text strong").html(data.data[i].postName);
                 $(".postnew_item:eq("+i+") .item_text span i").html(data.data[i].recruitNumbers);
-                $(".postnew_item:eq("+i+") .item_text em").html(data.data[i].workCity);
+                $(".postnew_item:eq("+i+") .item_text em").html(data.data[i].workCity);*/
             }
         })
         //输出最新岗位固定图片
@@ -253,7 +253,7 @@ var public={
         })
     },
     //关于中通
-    about:function(){
+    /*about:function(){
         var num=0;
         $(".chronicle_btn").click(function(){
             if($(this).hasClass("next"))
@@ -272,7 +272,7 @@ var public={
             $(".chronicle_room").css("-moz-transform","translateX(-"+num*110+"px)")
             $(".chronicle_room").css("-webkit-transform","translateX(-"+num*110+"px)")
         })
-    },
+    },*/
     //常见问题
     issue:function(){
         //问题开关

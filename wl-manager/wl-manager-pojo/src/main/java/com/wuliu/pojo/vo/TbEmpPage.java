@@ -7,8 +7,16 @@ import com.wuliu.pojo.po.TbEmp;
  */
 public class TbEmpPage extends TbEmp {
     //添加这两个属性是为了封装前端需要的参数,传给前端
+    private String userName;
     private String jobName;
     private String cityName;
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public String getJobName() {
         return jobName;

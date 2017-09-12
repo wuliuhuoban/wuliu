@@ -15,6 +15,7 @@ import com.wuliu.pojo.vo.TbEmpPage;
 import com.wuliu.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -49,6 +50,18 @@ public class EmpServiceImp implements EmpService {
     public TbEmpCustom selectSingle(TbUser tbUser) {
         System.out.println(tbUser.getId());
         return tbEmpMapperCustom.selectSingle(tbUser.getId());
+    }
+
+    @Override
+    @Transactional
+    public int updateEmp(TbEmp tbEmp) {
+        return tbEmpMapper.updateByPrimaryKeySelective(tbEmp);
+    }
+
+    @Override
+    public TbEmpCustom selectById(int id) {
+        TbEmpCustom tbEmp = tbEmpMapperCustom.selectById(id);
+        return tbEmp;
     }
 
     @Override

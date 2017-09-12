@@ -7,4 +7,5 @@ import com.wuliu.pojo.vo.TbEmpCustom;
  */
 public interface TbEmpMapperCustom {
     TbEmpCustom selectSingle(int id);
+    TbEmpCustom selectById(int id);
 }

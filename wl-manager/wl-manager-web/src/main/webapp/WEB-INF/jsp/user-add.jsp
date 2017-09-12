@@ -57,6 +57,8 @@
                 clearForm();
                 if(data>0){
                     $.messager.alert('消息', '添加成功！');
+                    wuliu.addTab("查询人员","empedit");
+                    wuliu.closeTab("新增人员");
                 }else{
                     $.messager.alert('消息', '账号已存在，添加失败！');
                 }
